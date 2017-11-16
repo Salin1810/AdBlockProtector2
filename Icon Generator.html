@@ -7,7 +7,7 @@
     <style>
         /* Debug scalling */
         :root {
-            --scale: 2;
+            --scale: 1;
         }
     </style>
     <script>
@@ -41,7 +41,7 @@
 
         {
             // Hexagone
-            context.lineWidth = 7;
+            context.lineWidth = 6;
 
             context.beginPath();
             context.moveTo(
@@ -55,6 +55,8 @@
                 );
             }
             context.closePath();
+            context.fillStyle = "palegreen";
+            context.fill();
             context.strokeStyle = "black";
             context.stroke();
         }
@@ -72,6 +74,8 @@
             context.lineTo(128 / 2, 128 / 2 - 5);
             context.lineTo(128 / 2 + 5, 30);
             context.closePath();
+            context.fillStyle = "white";
+            context.fill();
             context.strokeStyle = "black";
             context.stroke();
         }
