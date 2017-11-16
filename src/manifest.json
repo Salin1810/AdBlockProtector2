@@ -1,0 +1,30 @@
+{
+  "author": "jspenguin2017",
+  "background": {
+    "scripts": [
+      "libmicro/background.js",
+      "bootstrap.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "AdBlock Protector 2"
+  },
+  "description": "An anti-adblock defuser",
+  "homepage_url": "https://github.com/AdBlockProtector2/libmicro/",
+  "incognito": "spanning",
+  "manifest_version": 2,
+  "minimum_chrome_version": "62.0",
+  "name": "AdBlock Protector 2",
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "management",
+    "storage",
+    "unlimitedStorage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "version": "1.0"
+}
