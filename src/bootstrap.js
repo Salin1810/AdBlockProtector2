@@ -1,14 +1,5 @@
 "use strict";
 
-/**
- * Remote configuration and assets URL.
- * @const {string}
- */
-const REMOTE_CONFIG = ""
-    ;
-const REMOTE_ASSETS = ""
-    ;
-
 (async () => {
     const chrome = window.chrome || window.browser;
 
@@ -45,7 +36,7 @@ const REMOTE_ASSETS = ""
         if (Micro.config.length === 0 || settings.config_last_update + 86400000 < Date.now()) {
             let filter;
             try {
-                if (!REMOTE_CONFIG) {
+                if (typeof REMOTE_CONFIG !== "string" || REMOTE_CONFIG.length === 0) {
                     throw new Error("No remote filters");
                 }
 
@@ -74,7 +65,7 @@ const REMOTE_ASSETS = ""
             let assets;
 
             try {
-                if (!REMOTE_ASSETS) {
+                if (typeof REMOTE_ASSETS !== "string" || REMOTE_ASSETS.length === 0) {
                     throw new Error("No remote assets");
                 }
 
