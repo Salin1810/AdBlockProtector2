@@ -1,5 +1,5 @@
 # AdBlock Protector 2
 
-A compatibility shim for uBlock Protector
+An anti-adblock defuser
 
-This project is not yet ready for beta. 
+This project is now in public beta! 
