@@ -2,19 +2,54 @@
   "author": "jspenguin2017",
   "background": {
     "scripts": [
-      "libmicro/background.js",
+      "common.js",
+      "background/libmicro.js",
+      "background/1-background-core.js",
+      "background/libquantumizer.js",
+      "background/2-background-rules.js",
+      "background/3-background-debug.js",
       "bootstrap.js"
     ]
   },
   "browser_action": {
+    "default_icon": {
+      "128": "icon.png"
+    },
     "default_title": "AdBlock Protector 2"
   },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "common.js",
+        "content/1-content-domlib.js",
+        "content/2-content-core.js",
+        "content/libquantumizer.js",
+        "content/3-content-rules-1-common.js",
+        "content/3-content-rules-2-specific.js",
+        "content/3-content-rules-3-sticky.js",
+        "content/3-content-rules-4-proprietary.js",
+        "content/4-content-debug.js",
+        "content/5-ubo-extra.js"
+      ],
+      "match_about_blank": true,
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
   "description": "An anti-adblock defuser",
-  "homepage_url": "https://github.com/AdBlockProtector2/libmicro/",
+  "homepage_url": "https://github.com/AdBlockProtector2/AdBlockProtector2/",
   "incognito": "spanning",
   "manifest_version": 2,
   "minimum_chrome_version": "62.0",
   "name": "AdBlock Protector 2",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html"
+  },
   "permissions": [
     "http://*/*",
     "https://*/*",
